@@ -40,8 +40,11 @@ INSTALLED_APPS = [
     "crispy_forms",
     "movies",
     "shared",
+    "users",
 ]
 
+AUTH_USER_MODEL = "users.User"
+LOGIN_URL = 'login/'
 CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 MIDDLEWARE = [

@@ -1,6 +1,7 @@
 from django.db import OperationalError
 from django.http import Http404, HttpRequest, HttpResponse
 from django.shortcuts import redirect, render
+from django.contrib.auth.decorators import login_required
 
 from movies import forms, models
 
@@ -29,6 +30,7 @@ def get_movie(request: HttpRequest, movie_id: int) -> HttpResponse:
     return render(request, "movie_detail.html", context)
 
 
+@login_required
 def create_movie(request: HttpRequest) -> HttpResponse:
     form = forms.MovieForm()
     if request.method == "POST":

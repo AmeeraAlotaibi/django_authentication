@@ -43,16 +43,20 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'movie-list' %}">Movies</a>
           </li>
-          <li>
-            <a href="{% url 'register' %}">Register</a>
-          </li>
-          <li>
-            <a href="{% url 'login' %}">Login</a>
-          </li>
           {% if request.user.is_authenticated %}
-          <li>
-            <a href="{% url 'create-movie' %}">Add Movie</a>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'create-movie' %}">Add Movie</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'register' %}">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+          </li>          
           {% endif %}
         </ul>
       </div>

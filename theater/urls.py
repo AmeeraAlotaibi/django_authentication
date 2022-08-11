@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from movies import views as movie_views
 from shared import views as shared_views
-from users.views import register_view, get_home, login_view
+from users.views import logout_view, register_view, get_home, login_view
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -30,4 +30,5 @@ urlpatterns = [
     path("register/", register_view, name="register"),
     path("login/", login_view, name="login"),
     path("", get_home, name="register-success"),
+    path("logout/", logout_view, name="logout"),
 ]
